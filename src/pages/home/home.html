@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Text to Speech
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label stacked>Text</ion-label>
+    <ion-textarea rows="3" #textarea></ion-textarea>
+  </ion-item>
+
+  <ion-row padding>
+    <button ion-button (click)="sayText(textarea.value)">Say Text</button>
+    <button outline ion-button (click)="chooseLocale()">Language: {{localeLabel}}</button>
+  </ion-row>
+
+  <ion-row padding class="loader" *ngIf="loader">
+    <img src="assets/ripple.svg">
+  </ion-row>
+
+</ion-content>
